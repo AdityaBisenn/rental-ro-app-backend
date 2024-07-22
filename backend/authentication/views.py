@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from datetime import datetime, timedelta
 from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
-from .serializers import UserSerializer
+from authentication.serializers import UserSerializer
 from django.contrib.auth import authenticate, login, logout
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -14,7 +14,7 @@ from django.http import JsonResponse
 import requests
 from django.db import connection
 import os
-from authentication.models import CustomUser, Customer, Business
+from authentication.models import CustomUser, Customer
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
